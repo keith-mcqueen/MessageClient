@@ -13,7 +13,6 @@
 class HelpHandler : public CommandHandler {
 public:
     virtual ~HelpHandler();
-    virtual void handle(string commandLine);
     virtual string getHelpString();
     virtual bool canHandle(string commandLine);
     
@@ -21,6 +20,8 @@ public:
 
 protected:
     virtual string getCommandPrefix();
+    virtual string getName();
+    virtual void doHandle(string commandLine);
 
 private:
 

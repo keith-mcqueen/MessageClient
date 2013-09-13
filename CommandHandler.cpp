@@ -4,10 +4,13 @@
  * 
  * Created on September 11, 2013, 12:25 PM
  */
-
 #include "CommandHandler.h"
+
+#include <iostream>
 #include "QuitHandler.h"
 #include "HelpHandler.h"
+#include "SendHandler.h"
+#include "main.h"
 
 CommandHandler::CommandHandler() {
 }
@@ -21,7 +24,11 @@ CommandHandler::~CommandHandler() {
 list<CommandHandler*> CommandHandler::getHandlers() {
     list<CommandHandler*> handlers;
     
-    handlers.push_front(QuitHandler::instance());
+    // add the send handler
+    handlers.push_back(SendHandler::instance());
+    
+    // add the quit handler
+    handlers.push_back(QuitHandler::instance());
     
     // order is important here -- the HelpHandler *must* be the last in the list
     handlers.push_back(HelpHandler::instance());
@@ -36,5 +43,20 @@ bool CommandHandler::canHandle(string commandLine) {
     }
     
     return found == 0;
+}
+
+void CommandHandler::handle(string commandLine) {
+    debug(this->getName() + " is handling command line: " + commandLine);
+    if (!this->canHandle(commandLine)) {
+        this->printUnexpectedCommand(commandLine);
+        return;
+    }
+    
+    this->doHandle(commandLine);
+}
+
+void CommandHandler::printUnexpectedCommand(string commandLine) {
+    cout << "Unexpected command line: " << commandLine << endl;
+    cout << "Command should be of the form\n" << this->getHelpString() << endl;
 }
 

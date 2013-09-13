@@ -5,7 +5,12 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>CommandHandler.h</itemPath>
+      <itemPath>HelpHandler.h</itemPath>
+      <itemPath>Message.h</itemPath>
+      <itemPath>MessageCommandHandler.h</itemPath>
+      <itemPath>PutMessage.h</itemPath>
       <itemPath>QuitHandler.h</itemPath>
+      <itemPath>SendHandler.h</itemPath>
       <itemPath>main.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -17,8 +22,11 @@
                    projectFiles="true">
       <itemPath>CommandHandler.cpp</itemPath>
       <itemPath>HelpHandler.cpp</itemPath>
-      <itemPath>HelpHandler.h</itemPath>
+      <itemPath>Message.cpp</itemPath>
+      <itemPath>MessageCommandHandler.cpp</itemPath>
+      <itemPath>PutMessage.cpp</itemPath>
       <itemPath>QuitHandler.cpp</itemPath>
+      <itemPath>SendHandler.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -32,6 +40,8 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>.gitignore</itemPath>
+    <itemPath>README</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -47,6 +57,8 @@
           <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/msg</output>
         </linkerTool>
       </compileType>
+      <item path=".gitignore" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="CommandHandler.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="CommandHandler.h" ex="false" tool="3" flavor2="0">
@@ -55,9 +67,27 @@
       </item>
       <item path="HelpHandler.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Message.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Message.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MessageCommandHandler.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MessageCommandHandler.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PutMessage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PutMessage.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="QuitHandler.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="QuitHandler.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="README" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SendHandler.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SendHandler.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -85,6 +115,8 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path=".gitignore" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="CommandHandler.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="CommandHandler.h" ex="false" tool="3" flavor2="0">
@@ -93,9 +125,27 @@
       </item>
       <item path="HelpHandler.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Message.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Message.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MessageCommandHandler.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MessageCommandHandler.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="PutMessage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PutMessage.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="QuitHandler.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="QuitHandler.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="README" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SendHandler.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SendHandler.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

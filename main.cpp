@@ -16,7 +16,7 @@
 using namespace std;
 
 void printUserPrompt() {
-    cout << " % ";
+    cout << "% ";
 }
 
 bool DEBUG = false;
@@ -88,7 +88,7 @@ int main(int argc, char** argv) {
             printUserPrompt();
         }
     } catch (string & exc) {
-        
+        cout << exc << endl;
     }
 
     return 0;

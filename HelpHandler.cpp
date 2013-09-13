@@ -29,8 +29,11 @@ string HelpHandler::getCommandPrefix() {
     return "help";
 }
 
-void HelpHandler::handle(string commandLine) {
-    debug("HelpHandler is handling command line: " + commandLine);
+string HelpHandler::getName() {
+    return "HelpHandler";
+}
+
+void HelpHandler::doHandle(string commandLine) {
     list<CommandHandler*> handlers = CommandHandler::getHandlers();
     for (list<CommandHandler*>::iterator it = handlers.begin(); 
             it != handlers.end(); 
