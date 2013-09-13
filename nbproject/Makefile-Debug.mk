@@ -36,11 +36,14 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/CommandHandler.o \
+	${OBJECTDIR}/GetMessage.o \
 	${OBJECTDIR}/HelpHandler.o \
+	${OBJECTDIR}/ListHandler.o \
 	${OBJECTDIR}/Message.o \
 	${OBJECTDIR}/MessageCommandHandler.o \
 	${OBJECTDIR}/PutMessage.o \
 	${OBJECTDIR}/QuitHandler.o \
+	${OBJECTDIR}/ReadHandler.o \
 	${OBJECTDIR}/SendHandler.o \
 	${OBJECTDIR}/main.o
 
@@ -74,10 +77,20 @@ ${OBJECTDIR}/CommandHandler.o: CommandHandler.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/CommandHandler.o CommandHandler.cpp
 
+${OBJECTDIR}/GetMessage.o: GetMessage.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/GetMessage.o GetMessage.cpp
+
 ${OBJECTDIR}/HelpHandler.o: HelpHandler.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/HelpHandler.o HelpHandler.cpp
+
+${OBJECTDIR}/ListHandler.o: ListHandler.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/ListHandler.o ListHandler.cpp
 
 ${OBJECTDIR}/Message.o: Message.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -98,6 +111,11 @@ ${OBJECTDIR}/QuitHandler.o: QuitHandler.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/QuitHandler.o QuitHandler.cpp
+
+${OBJECTDIR}/ReadHandler.o: ReadHandler.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/ReadHandler.o ReadHandler.cpp
 
 ${OBJECTDIR}/SendHandler.o: SendHandler.cpp 
 	${MKDIR} -p ${OBJECTDIR}

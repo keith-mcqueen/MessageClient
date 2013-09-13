@@ -14,6 +14,9 @@ MessageCommandHandler::~MessageCommandHandler() {
 
 void MessageCommandHandler::doHandle(string commandLine) {
     Message* msg = this->prepareMessage(commandLine);
+    if (NULL == msg) {
+        return;
+    }
     debug("prepared message:\n" + msg->toString());
     
     // TODO send message to server

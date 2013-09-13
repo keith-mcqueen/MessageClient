@@ -11,6 +11,8 @@
 #include "HelpHandler.h"
 #include "SendHandler.h"
 #include "main.h"
+#include "ListHandler.h"
+#include "ReadHandler.h"
 
 CommandHandler::CommandHandler() {
 }
@@ -26,6 +28,12 @@ list<CommandHandler*> CommandHandler::getHandlers() {
     
     // add the send handler
     handlers.push_back(SendHandler::instance());
+    
+    // add the list handler
+    handlers.push_back(ListHandler::instance());
+    
+    // add the read handler
+    handlers.push_back(ReadHandler::instance());
     
     // add the quit handler
     handlers.push_back(QuitHandler::instance());
@@ -57,6 +65,6 @@ void CommandHandler::handle(string commandLine) {
 
 void CommandHandler::printUnexpectedCommand(string commandLine) {
     cout << "Unexpected command line: " << commandLine << endl;
-    cout << "Command should be of the form\n" << this->getHelpString() << endl;
+    cout << "Command should be of the form:\n" << this->getHelpString() << endl;
 }
 

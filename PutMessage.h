@@ -16,10 +16,11 @@ public:
     PutMessage(const PutMessage& orig);
     virtual ~PutMessage();
 
-private:
+protected:
     virtual string getHeader();
     virtual string getBody();
-    
+
+private:
     string subject;
     string body;
 };
