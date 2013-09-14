@@ -36,15 +36,16 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/CommandHandler.o \
-	${OBJECTDIR}/GetMessage.o \
+	${OBJECTDIR}/GetMessageRequest.o \
 	${OBJECTDIR}/HelpHandler.o \
 	${OBJECTDIR}/ListHandler.o \
-	${OBJECTDIR}/Message.o \
-	${OBJECTDIR}/MessageCommandHandler.o \
-	${OBJECTDIR}/PutMessage.o \
+	${OBJECTDIR}/PutMessageRequest.o \
 	${OBJECTDIR}/QuitHandler.o \
 	${OBJECTDIR}/ReadHandler.o \
+	${OBJECTDIR}/Request.o \
+	${OBJECTDIR}/RequestCommandHandler.o \
 	${OBJECTDIR}/SendHandler.o \
+	${OBJECTDIR}/ServerProxy.o \
 	${OBJECTDIR}/main.o
 
 
@@ -77,10 +78,10 @@ ${OBJECTDIR}/CommandHandler.o: CommandHandler.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/CommandHandler.o CommandHandler.cpp
 
-${OBJECTDIR}/GetMessage.o: GetMessage.cpp 
+${OBJECTDIR}/GetMessageRequest.o: GetMessageRequest.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GetMessage.o GetMessage.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GetMessageRequest.o GetMessageRequest.cpp
 
 ${OBJECTDIR}/HelpHandler.o: HelpHandler.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -92,20 +93,10 @@ ${OBJECTDIR}/ListHandler.o: ListHandler.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/ListHandler.o ListHandler.cpp
 
-${OBJECTDIR}/Message.o: Message.cpp 
+${OBJECTDIR}/PutMessageRequest.o: PutMessageRequest.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Message.o Message.cpp
-
-${OBJECTDIR}/MessageCommandHandler.o: MessageCommandHandler.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/MessageCommandHandler.o MessageCommandHandler.cpp
-
-${OBJECTDIR}/PutMessage.o: PutMessage.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/PutMessage.o PutMessage.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/PutMessageRequest.o PutMessageRequest.cpp
 
 ${OBJECTDIR}/QuitHandler.o: QuitHandler.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -117,10 +108,25 @@ ${OBJECTDIR}/ReadHandler.o: ReadHandler.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/ReadHandler.o ReadHandler.cpp
 
+${OBJECTDIR}/Request.o: Request.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Request.o Request.cpp
+
+${OBJECTDIR}/RequestCommandHandler.o: RequestCommandHandler.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/RequestCommandHandler.o RequestCommandHandler.cpp
+
 ${OBJECTDIR}/SendHandler.o: SendHandler.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/SendHandler.o SendHandler.cpp
+
+${OBJECTDIR}/ServerProxy.o: ServerProxy.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/ServerProxy.o ServerProxy.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

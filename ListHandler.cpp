@@ -6,6 +6,8 @@
  */
 #include "ListHandler.h"
 
+#include <iostream>
+#include <stdlib.h>
 #include "main.h"
 
 ListHandler* ListHandler::instance() {
@@ -16,12 +18,39 @@ ListHandler* ListHandler::instance() {
 ListHandler::~ListHandler() {
 }
 
-Message* ListHandler::prepareMessage(string commandLine) {
+Request* ListHandler::prepareRequest(string commandLine) {
     // extract the user
     string user = commandLine.substr(this->getCommandPrefix().size());
     debug("\tuser is: " + user);
     
-    return new Message("list", user);
+    return new Request("list", user);
+}
+
+void ListHandler::doHandleResponse(string response) {
+    // make sure that the response begins with "list"
+    if (response.find("list") != 0) {
+        cout << "Unexpected response: " << response << endl;
+        return;
+    }
+    
+    // find the space between "list" and [number]
+    int space = response.find(" ");
+    if (space == string::npos) {
+        cout << "Unexpected response: " << response << endl;
+        return;        
+    }
+    
+    // parse out the number of messages from the response
+    int numMsgs = atoi(response.substr(space + 1).c_str());
+    
+    // get the server proxy
+    ServerProxy* server = getServer();
+    
+    // get a line from the server for each message
+    for (int i = 0; i < numMsgs; i++) {
+        // output the line to the user
+        cout << server->getResponseLine();
+    }
 }
 
 string ListHandler::getHelpString() {

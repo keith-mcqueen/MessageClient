@@ -9,8 +9,13 @@
 #define	MAIN_H
 
 #include <string>
+#include "ServerProxy.h"
 
-void debug(std::string info);
+using namespace std;
+
+void debug(string info);
+
+ServerProxy* getServer();
 
 #endif	/* MAIN_H */
 

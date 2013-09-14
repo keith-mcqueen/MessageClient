@@ -16,7 +16,7 @@ QuitHandler* QuitHandler::instance() {
 QuitHandler::~QuitHandler() {
 }
 
-void QuitHandler::doHandle(string commandLine) {
+void QuitHandler::doHandleCommand(string commandLine) {
     throw this->getFarewellMessage();
 }
 

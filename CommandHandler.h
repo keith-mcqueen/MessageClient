@@ -19,7 +19,7 @@ public:
     CommandHandler(const CommandHandler& orig);
     virtual ~CommandHandler();
     virtual bool canHandle(string commandLine);
-    virtual void handle(string commandLine);
+    virtual void handleCommand(string commandLine);
     virtual string getHelpString() = 0;
     
     static list<CommandHandler*> getHandlers();
@@ -27,7 +27,7 @@ public:
 protected:
     virtual string getCommandPrefix() = 0;
     virtual string getName() = 0;
-    virtual void doHandle(string commandLine) = 0;
+    virtual void doHandleCommand(string commandLine) = 0;
     void printUnexpectedCommand(string commandLine);
 };
 

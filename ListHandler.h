@@ -8,9 +8,9 @@
 #ifndef LISTHANDLER_H
 #define	LISTHANDLER_H
 
-#include "MessageCommandHandler.h"
+#include "RequestCommandHandler.h"
 
-class ListHandler : public MessageCommandHandler {
+class ListHandler : public RequestCommandHandler {
 public:
     virtual ~ListHandler();
     virtual string getHelpString();
@@ -20,7 +20,8 @@ public:
 protected:
     virtual string getCommandPrefix();
     virtual string getName();
-    virtual Message* prepareMessage(string commandLine);
+    virtual Request* prepareRequest(string commandLine);
+    virtual void doHandleResponse(string response);
 
 private:
 

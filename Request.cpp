@@ -4,24 +4,24 @@
  * 
  * Created on September 12, 2013, 9:53 PM
  */
-#include "Message.h"
+#include "Request.h"
 
 #include <sstream>
 
-Message::Message(string type, string user) {
+Request::Request(string type, string user) {
     this->type = type;
     this->user = user;
 }
 
-Message::Message(const Message& orig) {
+Request::Request(const Request& orig) {
     this->type = orig.type;
     this->user = orig.user;
 }
 
-Message::~Message() {
+Request::~Request() {
 }
 
-string Message::toString() {
+string Request::toString() {
     stringstream ss;
     
     ss << this->getHeader() << endl;
@@ -30,7 +30,7 @@ string Message::toString() {
     return ss.str();
 }
 
-string Message::getHeader() {
+string Request::getHeader() {
     stringstream ss;
     
     ss << this->type << " " << this->user;
@@ -38,6 +38,6 @@ string Message::getHeader() {
     return ss.str();
 }
 
-string Message::getBody() {
+string Request::getBody() {
     return "";
 }

@@ -8,9 +8,9 @@
 #ifndef SENDHANDLER_H
 #define	SENDHANDLER_H
 
-#include "MessageCommandHandler.h"
+#include "RequestCommandHandler.h"
 
-class SendHandler : public MessageCommandHandler {
+class SendHandler : public RequestCommandHandler {
 public:
     virtual ~SendHandler();
     virtual string getHelpString();
@@ -20,7 +20,7 @@ public:
 protected:
     virtual string getCommandPrefix();
     virtual string getName();
-    virtual Message* prepareMessage(string commandLine);
+    virtual Request* prepareRequest(string commandLine);
 
 private:
 

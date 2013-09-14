@@ -53,14 +53,14 @@ bool CommandHandler::canHandle(string commandLine) {
     return found == 0;
 }
 
-void CommandHandler::handle(string commandLine) {
+void CommandHandler::handleCommand(string commandLine) {
     debug(this->getName() + " is handling command line: " + commandLine);
-    if (!this->canHandle(commandLine)) {
+    if (not this->canHandle(commandLine)) {
         this->printUnexpectedCommand(commandLine);
         return;
     }
     
-    this->doHandle(commandLine);
+    this->doHandleCommand(commandLine);
 }
 
 void CommandHandler::printUnexpectedCommand(string commandLine) {

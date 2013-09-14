@@ -5,18 +5,18 @@
  * Created on September 12, 2013, 9:53 PM
  */
 
-#ifndef MESSAGE_H
-#define	MESSAGE_H
+#ifndef REQUEST_H
+#define	REQUEST_H
 
 #include <string>
 
 using namespace std;
 
-class Message {
+class Request {
 public:
-    Message(string type, string user);
-    Message(const Message& orig);
-    virtual ~Message();
+    Request(string type, string user);
+    Request(const Request& orig);
+    virtual ~Request();
     
     string toString();
 

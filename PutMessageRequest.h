@@ -5,12 +5,12 @@
  * Created on September 12, 2013, 10:17 PM
  */
 
-#ifndef PUTMESSAGE_H
-#define	PUTMESSAGE_H
+#ifndef PUTMESSAGEREQUEST_H
+#define	PUTMESSAGEREQUEST_H
 
-#include "Message.h"
+#include "Request.h"
 
-class PutMessage : public Message {
+class PutMessage : public Request {
 public:
     PutMessage(string user, string subject, string body);
     PutMessage(const PutMessage& orig);

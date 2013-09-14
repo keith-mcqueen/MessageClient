@@ -5,15 +5,16 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>CommandHandler.h</itemPath>
-      <itemPath>GetMessage.h</itemPath>
+      <itemPath>GetMessageRequest.h</itemPath>
       <itemPath>HelpHandler.h</itemPath>
       <itemPath>ListHandler.h</itemPath>
-      <itemPath>Message.h</itemPath>
-      <itemPath>MessageCommandHandler.h</itemPath>
-      <itemPath>PutMessage.h</itemPath>
+      <itemPath>PutMessageRequest.h</itemPath>
       <itemPath>QuitHandler.h</itemPath>
-      <itemPath>ReadHandler.cpp</itemPath>
+      <itemPath>ReadHandler.h</itemPath>
+      <itemPath>Request.h</itemPath>
+      <itemPath>RequestCommandHandler.h</itemPath>
       <itemPath>SendHandler.h</itemPath>
+      <itemPath>ServerProxy.h</itemPath>
       <itemPath>main.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -24,15 +25,16 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>CommandHandler.cpp</itemPath>
-      <itemPath>GetMessage.cpp</itemPath>
+      <itemPath>GetMessageRequest.cpp</itemPath>
       <itemPath>HelpHandler.cpp</itemPath>
       <itemPath>ListHandler.cpp</itemPath>
-      <itemPath>Message.cpp</itemPath>
-      <itemPath>MessageCommandHandler.cpp</itemPath>
-      <itemPath>PutMessage.cpp</itemPath>
+      <itemPath>PutMessageRequest.cpp</itemPath>
       <itemPath>QuitHandler.cpp</itemPath>
-      <itemPath>ReadHandler.h</itemPath>
+      <itemPath>ReadHandler.cpp</itemPath>
+      <itemPath>Request.cpp</itemPath>
+      <itemPath>RequestCommandHandler.cpp</itemPath>
       <itemPath>SendHandler.cpp</itemPath>
+      <itemPath>ServerProxy.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -69,9 +71,9 @@
       </item>
       <item path="CommandHandler.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="GetMessage.cpp" ex="false" tool="1" flavor2="0">
+      <item path="GetMessageRequest.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="GetMessage.h" ex="false" tool="3" flavor2="0">
+      <item path="GetMessageRequest.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="HelpHandler.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -81,17 +83,9 @@
       </item>
       <item path="ListHandler.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Message.cpp" ex="false" tool="1" flavor2="0">
+      <item path="PutMessageRequest.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Message.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="MessageCommandHandler.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="MessageCommandHandler.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="PutMessage.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="PutMessage.h" ex="false" tool="3" flavor2="0">
+      <item path="PutMessageRequest.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="QuitHandler.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -103,9 +97,21 @@
       </item>
       <item path="ReadHandler.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Request.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Request.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="RequestCommandHandler.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="RequestCommandHandler.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="SendHandler.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="SendHandler.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ServerProxy.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ServerProxy.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -139,9 +145,9 @@
       </item>
       <item path="CommandHandler.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="GetMessage.cpp" ex="false" tool="1" flavor2="0">
+      <item path="GetMessageRequest.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="GetMessage.h" ex="false" tool="3" flavor2="0">
+      <item path="GetMessageRequest.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="HelpHandler.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -151,17 +157,9 @@
       </item>
       <item path="ListHandler.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Message.cpp" ex="false" tool="1" flavor2="0">
+      <item path="PutMessageRequest.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="Message.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="MessageCommandHandler.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="MessageCommandHandler.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="PutMessage.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="PutMessage.h" ex="false" tool="3" flavor2="0">
+      <item path="PutMessageRequest.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="QuitHandler.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -173,9 +171,21 @@
       </item>
       <item path="ReadHandler.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Request.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Request.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="RequestCommandHandler.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="RequestCommandHandler.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="SendHandler.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="SendHandler.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ServerProxy.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ServerProxy.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -27,6 +27,11 @@ void debug(string info) {
     }
 }
 
+ServerProxy* server;
+ServerProxy* getServer() {
+    return server;
+}
+
 CommandHandler* getCommandHandler(string commandLine) {
     debug("getting command handler for command line: " + commandLine);
     
@@ -48,8 +53,10 @@ CommandHandler* getCommandHandler(string commandLine) {
  * 
  */
 int main(int argc, char** argv) {
-    int option, port;
-    const char * ipaddress;
+    int option;
+    
+    int port = 3000;
+    string host = "localhost";
     
     // process command line options using getopt()
     // see "man 3 getopt"
@@ -60,7 +67,7 @@ int main(int argc, char** argv) {
                 break;
             
             case 's':
-                ipaddress = optarg;
+                host = optarg;
                 break;
                 
             case 'd':
@@ -74,16 +81,17 @@ int main(int argc, char** argv) {
     }
     
     // initialize the server proxy
+    server = new ServerProxy(host, port);
     
     // read input from user
     try {
         // prompt the user for input
         printUserPrompt();
         
-        string line;
-        while (getline(cin, line)) {
-            CommandHandler * handler = getCommandHandler(line);
-            handler->handle(line);
+        string command;
+        while (getline(cin, command)) {
+            CommandHandler * handler = getCommandHandler(command);
+            handler->handleCommand(command);
             
             printUserPrompt();
         }

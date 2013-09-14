@@ -23,6 +23,7 @@
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
             <word>getopt</word>
+            <word>localhost</word>
             <word>msg</word>
         </spellchecker-wordlist>
     </configuration>

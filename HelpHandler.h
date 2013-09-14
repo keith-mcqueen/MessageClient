@@ -21,7 +21,7 @@ public:
 protected:
     virtual string getCommandPrefix();
     virtual string getName();
-    virtual void doHandle(string commandLine);
+    virtual void doHandleCommand(string commandLine);
 
 private:
 

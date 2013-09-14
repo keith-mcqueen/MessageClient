@@ -8,9 +8,9 @@
 #ifndef READHANDLER_H
 #define	READHANDLER_H
 
-#include "MessageCommandHandler.h"
+#include "RequestCommandHandler.h"
 
-class ReadHandler : public MessageCommandHandler {
+class ReadHandler : public RequestCommandHandler {
 public:
     virtual ~ReadHandler();
     virtual string getHelpString();
@@ -20,7 +20,8 @@ public:
 protected:
     virtual string getCommandPrefix();
     virtual string getName();
-    virtual Message* prepareMessage(string commandLine);
+    virtual Request* prepareRequest(string commandLine);
+    virtual void doHandleResponse(string response);
 
 private:
 

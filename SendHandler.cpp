@@ -7,7 +7,7 @@
 #include "SendHandler.h"
 
 #include <iostream>
-#include "PutMessage.h"
+#include "PutMessageRequest.h"
 #include "main.h"
 
 SendHandler* SendHandler::instance() {
@@ -18,7 +18,7 @@ SendHandler* SendHandler::instance() {
 SendHandler::~SendHandler() {
 }
 
-Message* SendHandler::prepareMessage(string commandLine) {
+Request* SendHandler::prepareRequest(string commandLine) {
     string prefix = this->getCommandPrefix();
     
     // extract the recipient (which is between the prefix and the space)
@@ -44,7 +44,7 @@ Message* SendHandler::prepareMessage(string commandLine) {
             break;
         }
         
-        if (!content.empty()) {
+        if (not content.empty()) {
             content.append("\n");
         }
         content.append(line);

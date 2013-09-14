@@ -33,7 +33,7 @@ string HelpHandler::getName() {
     return "HelpHandler";
 }
 
-void HelpHandler::doHandle(string commandLine) {
+void HelpHandler::doHandleCommand(string commandLine) {
     list<CommandHandler*> handlers = CommandHandler::getHandlers();
     for (list<CommandHandler*>::iterator it = handlers.begin(); 
             it != handlers.end(); 
