@@ -17,25 +17,22 @@
 CommandHandler::CommandHandler() {
 }
 
-CommandHandler::CommandHandler(const CommandHandler& orig) {
-}
-
 CommandHandler::~CommandHandler() {
 }
 
 list<CommandHandler*> CommandHandler::getHandlers() {
     list<CommandHandler*> handlers;
     
-    // add the send handler
+    // add the "send" command handler
     handlers.push_back(SendHandler::instance());
     
-    // add the list handler
+    // add the "list" command handler
     handlers.push_back(ListHandler::instance());
     
-    // add the read handler
+    // add the "read" command handler
     handlers.push_back(ReadHandler::instance());
     
-    // add the quit handler
+    // add the "quit" command handler
     handlers.push_back(QuitHandler::instance());
     
     // order is important here -- the HelpHandler *must* be the last in the list
@@ -50,7 +47,7 @@ bool CommandHandler::canHandle(string commandLine) {
         return false;
     }
     
-    return found == 0;
+    return 0 == found;
 }
 
 void CommandHandler::handleCommand(string commandLine) {

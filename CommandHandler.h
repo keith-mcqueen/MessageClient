@@ -16,7 +16,6 @@ using namespace std;
 class CommandHandler {
 public:
     CommandHandler();
-    CommandHandler(const CommandHandler& orig);
     virtual ~CommandHandler();
     virtual bool canHandle(string commandLine);
     virtual void handleCommand(string commandLine);
