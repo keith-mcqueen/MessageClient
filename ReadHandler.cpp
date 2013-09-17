@@ -44,14 +44,14 @@ void ReadHandler::doHandleResponse(string response) {
     
     // make sure that the response begins with "message "
     if (response.find(_message_) != 0) {
-        cout << "Unexpected response: " << response << endl;
+        debug("ReadHandler::doHandleResponse -- Unexpected response: " + response);
         return;
     }
     
     // find the space between [subject] and [length]
     int space = response.find(" ", _message_len_);
     if (space == string::npos) {
-        cout << "Unexpected response: " << response << endl;
+        debug("ReadHandler::doHandleResponse -- Unexpected response: " + response);
         return;        
     }
     
@@ -63,11 +63,12 @@ void ReadHandler::doHandleResponse(string response) {
     int msgLen = atoi(response.substr(space + 1).c_str());
     
     // get the server proxy
-    ServerProxy* server = getServer();
+    ServerProxy* server = ServerProxy::instance();
     
     // get the message body from the server
     string body = server->getResponseString(msgLen);
     
+    // output the message body
     cout << body << endl;
 }
 

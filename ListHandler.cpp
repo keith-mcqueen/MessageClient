@@ -29,14 +29,14 @@ Request* ListHandler::prepareRequest(string commandLine) {
 void ListHandler::doHandleResponse(string response) {
     // make sure that the response begins with "list"
     if (response.find("list") != 0) {
-        cout << "Unexpected response: " << response << endl;
+        debug("ListHandler::doHandleResponse -- Unexpected response: " + response);
         return;
     }
     
     // find the space between "list" and [number]
     int space = response.find(" ");
     if (space == string::npos) {
-        cout << "Unexpected response: " << response << endl;
+        debug("ListHandler::doHandleResponse -- Unexpected response: " + response);
         return;        
     }
     
@@ -44,7 +44,7 @@ void ListHandler::doHandleResponse(string response) {
     int numMsgs = atoi(response.substr(space + 1).c_str());
     
     // get the server proxy
-    ServerProxy* server = getServer();
+    ServerProxy* server = ServerProxy::instance();
     
     // get a line from the server for each message
     for (int i = 0; i < numMsgs; i++) {

@@ -15,7 +15,5 @@ using namespace std;
 
 void debug(string info);
 
-ServerProxy* getServer();
-
 #endif	/* MAIN_H */
 

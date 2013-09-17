@@ -27,11 +27,6 @@ void debug(string info) {
     }
 }
 
-ServerProxy* server;
-ServerProxy* getServer() {
-    return server;
-}
-
 CommandHandler* getCommandHandler(string commandLine) {
     debug("getting command handler for command line: " + commandLine);
     
@@ -81,20 +76,18 @@ int main(int argc, char** argv) {
     }
     
     // initialize the server proxy
-    server = new ServerProxy(host, port);
+    ServerProxy* server = ServerProxy::instance();
+    server->init(host, port);
     
     // read input from user
     try {
-        // prompt the user for input
-        printUserPrompt();
-        
         string command;
-        while (getline(cin, command)) {
+        do {
             CommandHandler * handler = getCommandHandler(command);
             handler->handleCommand(command);
             
             printUserPrompt();
-        }
+        } while (getline(cin, command));
     } catch (string & exc) {
         cout << exc << endl;
     }

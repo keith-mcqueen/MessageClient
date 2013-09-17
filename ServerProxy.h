@@ -15,17 +15,19 @@ using namespace std;
 
 class ServerProxy {
 public:
-    ServerProxy(string host, int port);
     virtual ~ServerProxy();
     bool sendRequest(Request* request);
     string getResponseLine();
     string getResponseString(int length);
+    void init(string hostname, int port);
+
+    static ServerProxy* instance();
 
 private:
-    void init(string hostname, int port);
-    
     int server;
     string leftOvers;
+    char* buf;
+    int buflen;
 };
 
 #endif	/* SERVERPROXY_H */

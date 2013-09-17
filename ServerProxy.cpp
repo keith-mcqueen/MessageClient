@@ -16,14 +16,19 @@
 #include <errno.h>
 #include "main.h"
 
-ServerProxy::ServerProxy(string hostname, int port) {
-    this->init(hostname, port);
+ServerProxy* ServerProxy::instance() {
+    static ServerProxy* instance = new ServerProxy();
+    return instance;
 }
 
 ServerProxy::~ServerProxy() {
+    delete this->buf;
 }
 
 void ServerProxy::init(string hostname, int port) {
+    this->buflen = 1024;
+    this->buf = new char[this->buflen + 1];
+    
     struct sockaddr_in server_addr;
 
     // use DNS to get IP address
@@ -101,12 +106,9 @@ string ServerProxy::getResponseLine() {
     // start out with the leftovers from the last call
     string response = this->leftOvers;
     
-    // the temporary buffer to store the server's response
-    char* buf;
-    
     int newline;
     while ((newline = response.find("\n")) == string::npos) {
-        int numCharsRecvd = recv(this->server, buf, 1024, 0);
+        int numCharsRecvd = recv(this->server, this->buf, this->buflen, 0);
         if (numCharsRecvd < 0) {
             if (errno == EINTR) {
                 // the socket call was interrupted, just try again
@@ -128,7 +130,7 @@ string ServerProxy::getResponseLine() {
     // save everything after the newline for later
     this->leftOvers = response.substr(newline + 1);
     
-    // return the portion of the response that precedes the newline
+    // return the portion of the response that precedes the newline (but keep the newline))
     return response.substr(0, newline + 1);
 }
 
@@ -138,11 +140,8 @@ string ServerProxy::getResponseString(int length) {
     // start out with the leftovers from the last call
     string response = this->leftOvers;
     
-    // the temporary buffer to store the server's response
-    char* buf;
-    
     while (response.length() < length) {
-        int numCharsRecvd = recv(this->server, buf, 1024, 0);
+        int numCharsRecvd = recv(this->server, this->buf, this->buflen, 0);
         if (numCharsRecvd < 0) {
             if (errno == EINTR) {
                 // the socket call was interrupted, just try again

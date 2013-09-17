@@ -22,7 +22,7 @@ void RequestCommandHandler::doHandleCommand(string commandLine) {
     
     // send request to server
     debug("RequestCommandHandler::doHandle -- send the request to the server");
-    ServerProxy* server = getServer();
+    ServerProxy* server = ServerProxy::instance();
     server->sendRequest(msg);
     
     // get response (line) from server
