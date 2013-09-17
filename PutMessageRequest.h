@@ -13,7 +13,6 @@
 class PutMessage : public Request {
 public:
     PutMessage(string user, string subject, string body);
-    PutMessage(const PutMessage& orig);
     virtual ~PutMessage();
 
 protected:

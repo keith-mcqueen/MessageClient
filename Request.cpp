@@ -13,11 +13,6 @@ Request::Request(string type, string user) {
     this->user = user;
 }
 
-Request::Request(const Request& orig) {
-    this->type = orig.type;
-    this->user = orig.user;
-}
-
 Request::~Request() {
 }
 

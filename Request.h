@@ -15,7 +15,6 @@ using namespace std;
 class Request {
 public:
     Request(string type, string user);
-    Request(const Request& orig);
     virtual ~Request();
     
     string toString();
@@ -24,6 +23,7 @@ protected:
     virtual string getHeader();
     virtual string getBody();
     
+private:
     string type;
     string user;
 };

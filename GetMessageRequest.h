@@ -13,7 +13,6 @@
 class GetMessageRequest : public Request {
 public:
     GetMessageRequest(string user, string number);
-    GetMessageRequest(const GetMessageRequest& orig);
     virtual ~GetMessageRequest();
 
 protected:

@@ -12,10 +12,6 @@ GetMessageRequest::GetMessageRequest(string user, string number) : Request("get"
     this->number = number;
 }
 
-GetMessageRequest::GetMessageRequest(const GetMessageRequest& orig) : Request("get", orig.user) {
-    this->number = orig.number;
-}
-
 GetMessageRequest::~GetMessageRequest() {
 }
 

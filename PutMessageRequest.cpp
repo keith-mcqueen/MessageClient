@@ -13,11 +13,6 @@ PutMessage::PutMessage(string user, string subject, string body) : Request("put"
     this->body = body;
 }
 
-PutMessage::PutMessage(const PutMessage& orig) : Request("put", orig.user) {
-    this->subject = orig.subject;
-    this->body = orig.body;
-}
-
 PutMessage::~PutMessage() {
 }
 
