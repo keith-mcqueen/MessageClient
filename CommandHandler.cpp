@@ -37,7 +37,7 @@ list<CommandHandler*> CommandHandler::getHandlers() {
     handlers.push_back(QuitHandler::instance());
     
     // add the "reset" command handler
-    handlers.push_back(ResetHandler::instance());
+    //handlers.push_back(ResetHandler::instance());
     
     // order is important here -- the HelpHandler *must* be the last in the list
     handlers.push_back(HelpHandler::instance());
