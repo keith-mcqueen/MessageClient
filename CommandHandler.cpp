@@ -13,6 +13,7 @@
 #include "main.h"
 #include "ListHandler.h"
 #include "ReadHandler.h"
+#include "ResetHandler.h"
 
 CommandHandler::CommandHandler() {
 }
@@ -34,6 +35,9 @@ list<CommandHandler*> CommandHandler::getHandlers() {
     
     // add the "quit" command handler
     handlers.push_back(QuitHandler::instance());
+    
+    // add the "reset" command handler
+    handlers.push_back(ResetHandler::instance());
     
     // order is important here -- the HelpHandler *must* be the last in the list
     handlers.push_back(HelpHandler::instance());

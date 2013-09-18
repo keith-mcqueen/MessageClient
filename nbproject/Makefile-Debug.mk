@@ -44,6 +44,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/ReadHandler.o \
 	${OBJECTDIR}/Request.o \
 	${OBJECTDIR}/RequestCommandHandler.o \
+	${OBJECTDIR}/ResetHandler.o \
+	${OBJECTDIR}/ResetRequest.o \
 	${OBJECTDIR}/SendHandler.o \
 	${OBJECTDIR}/ServerProxy.o \
 	${OBJECTDIR}/main.o
@@ -117,6 +119,16 @@ ${OBJECTDIR}/RequestCommandHandler.o: RequestCommandHandler.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/RequestCommandHandler.o RequestCommandHandler.cpp
+
+${OBJECTDIR}/ResetHandler.o: ResetHandler.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/ResetHandler.o ResetHandler.cpp
+
+${OBJECTDIR}/ResetRequest.o: ResetRequest.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/ResetRequest.o ResetRequest.cpp
 
 ${OBJECTDIR}/SendHandler.o: SendHandler.cpp 
 	${MKDIR} -p ${OBJECTDIR}

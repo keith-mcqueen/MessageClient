@@ -13,6 +13,8 @@
       <itemPath>ReadHandler.h</itemPath>
       <itemPath>Request.h</itemPath>
       <itemPath>RequestCommandHandler.h</itemPath>
+      <itemPath>ResetHandler.h</itemPath>
+      <itemPath>ResetRequest.h</itemPath>
       <itemPath>SendHandler.h</itemPath>
       <itemPath>ServerProxy.h</itemPath>
       <itemPath>main.h</itemPath>
@@ -33,6 +35,8 @@
       <itemPath>ReadHandler.cpp</itemPath>
       <itemPath>Request.cpp</itemPath>
       <itemPath>RequestCommandHandler.cpp</itemPath>
+      <itemPath>ResetHandler.cpp</itemPath>
+      <itemPath>ResetRequest.cpp</itemPath>
       <itemPath>SendHandler.cpp</itemPath>
       <itemPath>ServerProxy.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -104,6 +108,14 @@
       <item path="RequestCommandHandler.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="RequestCommandHandler.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ResetHandler.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ResetHandler.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ResetRequest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ResetRequest.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="SendHandler.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -178,6 +190,14 @@
       <item path="RequestCommandHandler.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="RequestCommandHandler.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ResetHandler.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ResetHandler.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ResetRequest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ResetRequest.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="SendHandler.cpp" ex="false" tool="1" flavor2="0">
       </item>
