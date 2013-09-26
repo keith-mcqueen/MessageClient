@@ -25,6 +25,9 @@ void RequestCommandHandler::doHandleCommand(string commandLine) {
     ServerProxy* server = ServerProxy::instance();
     server->sendRequest(msg);
     
+    // delete the request (recover memory)
+    delete msg;
+    
     // get response (line) from server
     string response = server->getResponseLine();
     debug("RequestCommandHandler::doHandleCommand -- server response (line) is: " + response);
